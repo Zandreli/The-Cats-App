@@ -36,7 +36,7 @@ photosButton.addEventListener("click", async () => {
     if (count > 0 && count <= 50) {
         try {
             const res = await axios.get(`https://api.thecatapi.com/v1/images/search?limit=${count}`);
-            response.data.forEach((imgData) => {
+            res.data.forEach((imgData) => {
                 const img = document.createElement("img");
                 img.src = imgData.url;
                 img.alt = "Cat Photo";
